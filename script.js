@@ -1,25 +1,25 @@
-function downloadBook(imageElement) {
-    // Get the image source (URL) and alt text
-    const imageUrl = imageElement.src;
-    const altText = imageElement.alt;
+// function downloadBook(imageElement) {
+//     // Get the image source (URL) and alt text
+//     const imageUrl = imageElement.src;
+//     const altText = imageElement.alt;
   
-    // Create a link element
-    const link = document.createElement('a');
-    link.href = imageUrl;
+//     // Create a link element
+//     const link = document.createElement('a');
+//     link.href = imageUrl;
   
-    link.download = `${product.author}.jpg`; // Use the alt text as the file name
+//     link.download = `${product.author}.jpg`; // Use the alt text as the file name
   
-    // Append the link to the body
-    document.body.appendChild(link);
+//     // Append the link to the body
+//     document.body.appendChild(link);
   
-    // Trigger the download
-    link.click();
+//     // Trigger the download
+//     link.click();
   
-    // Remove the link from the document
-    document.body.removeChild(link);
+//     // Remove the link from the document
+//     document.body.removeChild(link);
   
-    alert(`Downloading ${altText}.jpg...`);
-  }
+//     alert(`Downloading ${altText}.jpg...`);
+//   }
 
   const products = [
     {
