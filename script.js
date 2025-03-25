@@ -28,6 +28,7 @@
         price: 999.99,
         image: "images/book1.JPG",
         author: "By F. Scott Fitzgerald",
+        review: "I really liked being able to listen to the audiobook"
     },
     {
         id: 2,
@@ -77,6 +78,7 @@ products.forEach(product => {
         <h3>${product.name}</h3>
         <p>$${product.price}</p>
         <p>${product.author}</p>
+        <p>${product.review}</p>
         <a href="#" class="btn add-to-cart" data-id="${product.id}">Download</a>
     `;
     productGrid.appendChild(productElement);
