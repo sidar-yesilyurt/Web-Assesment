@@ -56,36 +56,37 @@ const products = [
     }
 ];
 
-
-
 // Select the product grid container to add product cards
 const productGrid = document.getElementById("product-grid");
 
-// Loop through each product and create its HTML card
-products.forEach(product => {
-    const productElement = document.createElement("div");
-    productElement.classList.add("product");
-    productElement.innerHTML = `
-        <img src="${product.image}" alt="${product.name}">
-        <div class="product-content">
-            <div class="product-header">
-                <div class="product-title">
-                    <h3>${product.name}</h3>
-                    <p class="author">${product.author}</p>
+// Only create product grid if we're on the homepage
+if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+    // Loop through each product and create its HTML card
+    products.forEach(product => {
+        const productElement = document.createElement("div");
+        productElement.classList.add("product");
+        productElement.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <div class="product-content">
+                <div class="product-header">
+                    <div class="product-title">
+                        <h3>${product.name}</h3>
+                        <p class="author">${product.author}</p>
+                    </div>
+                    <div class="product-review">
+                        <div class="stars">${product.stars}</div>
+                        <p class="review">"${product.review}"</p>
+                    </div>
                 </div>
-                <div class="product-review">
-                    <div class="stars">${product.stars}</div>
-                    <p class="review">"${product.review}"</p>
+                <div class="product-footer">
+                    <p class="price">£${product.price}</p>
+                    <button class="btn">Download</button>
                 </div>
             </div>
-            <div class="product-footer">
-                <p class="price">£${product.price}</p>
-                <button class="btn">Download</button>
-            </div>
-        </div>
-    `;
-    productGrid.appendChild(productElement);
-});
+        `;
+        productGrid && productGrid.appendChild(productElement);
+    });
+}
 
 // User reviews data for carousel
 const reviews = [
@@ -101,12 +102,18 @@ const reviews = [
     },
     {
         name: "Sophie M.",
-        quote: "The variety of genres and authors available is impressive. I’ve discovered so many great books through BookHaven.",
+        quote: "The variety of genres and authors available is impressive. I've discovered so many great books through BookHaven.",
         image: "reviewImages/sophie.jpg"
     }
 ];
+
 // Function to create the review carousel
 function createReviewCarousel() {
+    // Only create carousel on homepage
+    if (!window.location.pathname.endsWith("index.html")) {
+        return;
+    }
+
     console.log("Creating Review Carousel");
 
     // Create the carousel section
@@ -176,77 +183,86 @@ function createReviewCarousel() {
     updateCarousel();
 }
 
-// Create the carousel once the page content has loaded
-document.addEventListener('DOMContentLoaded', createReviewCarousel);
-
-
-
-
-// Define a separate array for Seasonal Sales books with unique details
-const sale = [
-    {
-      id: 201,
-      name: "Circe",
-      price: 5.49,
-      image: "salesImages/Circe.jpg",
-      author: "Madeline Miller",
-      review: "A mesmerizing retelling of Greek mythology. The narration is enchanting!",
-      stars: "★★★★★"
-    },
-    {
-      id: 202,
-      name: "The Night Circus",
-      price: 6.99,
-      image: "salesImages/night-circus.jpg",
-      author: "Erin Morgenstern",
-      review: "A magical and mysterious story brought to life with vivid narration.",
-      stars: "★★★★★"
-    },
-    {
-      id: 203,
-      name: "Project Hail Mary",
-      price: 7.49,
-      image: "salesImages/project-hail-mary.jpg",
-      author: "Andy Weir",
-      review: "A gripping space adventure with an outstanding performance by the narrator.",
-      stars: "★★★★☆"
-    },
-    {
-      id: 204,
-      name: "The Song of Achilles",
-      price: 5.99,
-      image: "salesImages/song-of-achilles.jpg",
-      author: "Madeline Miller",
-      review: "Heart-wrenching and beautifully narrated. A must-listen!",
-      stars: "★★★★★"
+// Seasonal Sales Data and Functionality
+function createSeasonalSales() {
+    // Only create seasonal sales on sales page
+    if (!window.location.pathname.includes('sales.html')) {
+        return;
     }
-  ];
-  
-  // Select the Seasonal Sales grid container
-  const salesGrid = document.getElementById('seasonal-sales-grid');
-  
-  // Generate and display Seasonal Sales book cards
-  sale.forEach(book => {
-    const bookElement = document.createElement('div');
-    bookElement.classList.add('product');
-    bookElement.innerHTML = `
-      <img src="${book.image}" alt="${book.name}">
-      <div class="product-content">
-        <div class="product-header">
-          <div class="product-title">
-            <h3>${book.name}</h3>
-            <p class="author">${book.author}</p>
-          </div>
-          <div class="product-review">
-            <div class="stars">${book.stars}</div>
-            <p class="review">"${book.review}"</p>
-          </div>
-        </div>
-        <div class="product-footer">
-          <p class="price">£${book.price} <span class="discount">(50% Off!)</span></p>
-          <button class="btn">Download</button>
-        </div>
-      </div>
-    `;
-    salesGrid.appendChild(bookElement);
-  });
+
+    const sale = [
+        {
+            id: 201,
+            name: "Circe",
+            price: 5.49,
+            image: "salesImages/Circe.jpg",
+            author: "Madeline Miller",
+            review: "A mesmerizing retelling of Greek mythology. The narration is enchanting!",
+            stars: "★★★★★"
+        },
+        {
+            id: 202,
+            name: "The Night Circus",
+            price: 6.99,
+            image: "salesImages/night-circus.jpg",
+            author: "Erin Morgenstern",
+            review: "A magical and mysterious story brought to life with vivid narration.",
+            stars: "★★★★★"
+        },
+        {
+            id: 203,
+            name: "Project Hail Mary",
+            price: 7.49,
+            image: "salesImages/project-hail-mary.jpg",
+            author: "Andy Weir",
+            review: "A gripping space adventure with an outstanding performance by the narrator.",
+            stars: "★★★★☆"
+        },
+        {
+            id: 204,
+            name: "The Song of Achilles",
+            price: 5.99,
+            image: "salesImages/song-of-achilles.jpg",
+            author: "Madeline Miller",
+            review: "Heart-wrenching and beautifully narrated. A must-listen!",
+            stars: "★★★★★"
+        }
+    ];
+
+    const salesGrid = document.getElementById('seasonal-sales-grid');
+    if (!salesGrid) {
+        console.error('Sales grid not found!');
+        return;
+    }
+
+    sale.forEach(book => {
+        const bookElement = document.createElement('div');
+        bookElement.classList.add('product');
+        bookElement.innerHTML = `
+            <img src="${book.image}" alt="${book.name}">
+            <div class="product-content">
+                <div class="product-header">
+                    <div class="product-title">
+                        <h3>${book.name}</h3>
+                        <p class="author">${book.author}</p>
+                    </div>
+                    <div class="product-review">
+                        <div class="stars">${book.stars}</div>
+                        <p class="review">"${book.review}"</p>
+                    </div>
+                </div>
+                <div class="product-footer">
+                    <p class="price">£${book.price} <span class="discount">(50% Off!)</span></p>
+                    <button class="btn">Download</button>
+                </div>
+            </div>
+        `;
+        salesGrid.appendChild(bookElement);
+    });
+}
+
+// Initialize all components when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    createReviewCarousel();
+    createSeasonalSales();
+});
