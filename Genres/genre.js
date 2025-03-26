@@ -1,4 +1,4 @@
-// genre.js
+//Imports the const from the storage.js
 import { fiction, nonFiction } from './storage.js';
 
 const productGrid = document.getElementById("product-grid");
