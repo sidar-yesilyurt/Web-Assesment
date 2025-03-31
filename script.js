@@ -4,7 +4,11 @@ const products = [
         id: 1,
         name: "The Great Gatsby",
         price: 9.99,
+<<<<<<< HEAD
         image: "images/book1.JPG",
+=======
+        image: "images/book1.jpg",
+>>>>>>> ce1b755 (slick bar)
         author: "F. Scott Fitzgerald",
         review: "A timeless classic! The narration brought the Jazz Age to life.",
         stars: "★★★★★"
@@ -13,7 +17,11 @@ const products = [
         id: 2,
         name: "1984",
         price: 8.99,
+<<<<<<< HEAD
         image: "images/book2.JPG",
+=======
+        image: "images/book2.jpg",
+>>>>>>> ce1b755 (slick bar)
         author: "George Orwell",
         review: "Chilling and thought-provoking. Perfect narrator for this dystopia.",
         stars: "★★★★☆"
@@ -92,7 +100,7 @@ if (window.location.pathname.endsWith("index.html") || window.location.pathname 
 const reviews = [
     {
         name: "Emma W.",
-        quote: "BookHaven has an amazing selection of audiobooks. The audio quality is fantastic, and the prices are reasonable.",
+        quote: "Online Audiobooks has an amazing selection of audiobooks. The audio quality is fantastic, and the prices are reasonable.",
         image: "reviewImages/emma.jpg"
     },
     {
@@ -102,7 +110,7 @@ const reviews = [
     },
     {
         name: "Sophie M.",
-        quote: "The variety of genres and authors available is impressive. I've discovered so many great books through BookHaven.",
+        quote: "The variety of genres and authors available is impressive. I've discovered so many great books through Online Audiobooks.",
         image: "reviewImages/sophie.jpg"
     }
 ];
@@ -110,7 +118,7 @@ const reviews = [
 // Function to create the review carousel
 function createReviewCarousel() {
     // Only create carousel on homepage
-    if (!window.location.pathname.endsWith("index.html")) {
+    if (!window.location.pathname.endsWith("index.html") && window.location.pathname !== "/") {
         return;
     }
 
@@ -266,3 +274,51 @@ document.addEventListener('DOMContentLoaded', () => {
     createReviewCarousel();
     createSeasonalSales();
 });
+
+<<<<<<< HEAD
+// Initialize SlickNav mobile menu
+$(function() {
+    $('#menu').slicknav({
+        prependTo: 'body',
+        label: 'MENU',
+        allowParentLinks: true,
+        brand: 'Online Audiobooks',
+        duplicate: false,
+        closedSymbol: '&#9658;',
+        openedSymbol: '&#9660;'
+    });
+
+    // Smooth scroll for in-page links
+    $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if( target.length ) {
+            event.preventDefault();
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top
+            }, 500);
+        }
+    });
+});
+=======
+// Wait for everything to be fully loaded
+window.addEventListener('load', function() {
+    // Initialize SlickNav
+    if (typeof $.fn.slicknav === 'function') {
+        $('#menu').slicknav({
+            prependTo: 'body',
+            label: 'MENU',
+            brand: '',
+            closedSymbol: '☰',
+            allowParentLinks: true,
+            init: function() {
+                console.log('Mobile menu initialized successfully');
+            }
+        });
+    } else {
+        console.error('SlickNav plugin not loaded!');
+        setupMobileMenuFallback();
+    }
+});
+
+
+>>>>>>> ce1b755 (slick bar)
