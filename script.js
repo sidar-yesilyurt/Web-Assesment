@@ -92,7 +92,7 @@ if (window.location.pathname.endsWith("index.html") || window.location.pathname 
 const reviews = [
     {
         name: "Emma W.",
-        quote: "BookHaven has an amazing selection of audiobooks. The audio quality is fantastic, and the prices are reasonable.",
+        quote: "Online Audiobooks has an amazing selection of audiobooks. The audio quality is fantastic, and the prices are reasonable.",
         image: "reviewImages/emma.jpg"
     },
     {
@@ -102,7 +102,7 @@ const reviews = [
     },
     {
         name: "Sophie M.",
-        quote: "The variety of genres and authors available is impressive. I've discovered so many great books through BookHaven.",
+        quote: "The variety of genres and authors available is impressive. I've discovered so many great books through Online Audiobooks.",
         image: "reviewImages/sophie.jpg"
     }
 ];
@@ -110,7 +110,7 @@ const reviews = [
 // Function to create the review carousel
 function createReviewCarousel() {
     // Only create carousel on homepage
-    if (!window.location.pathname.endsWith("index.html")) {
+    if (!window.location.pathname.endsWith("index.html") && window.location.pathname !== "/") {
         return;
     }
 
@@ -267,8 +267,17 @@ document.addEventListener('DOMContentLoaded', () => {
     createSeasonalSales();
 });
 
-$(document).ready(function(){
-    $('#menu').slicknav();
+// Initialize SlickNav mobile menu
+$(function() {
+    $('#menu').slicknav({
+        prependTo: 'body',
+        label: 'MENU',
+        allowParentLinks: true,
+        brand: 'Online Audiobooks',
+        duplicate: false,
+        closedSymbol: '&#9658;',
+        openedSymbol: '&#9660;'
+    });
 
     // Smooth scroll for in-page links
     $('a[href^="#"]').on('click', function(event) {

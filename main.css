@@ -47,8 +47,8 @@ header {
 header h1 {
     margin: 0;
     font-size: 2rem;
+    /* Add any custom styling for "Online Audiobooks" */
 }
-
 /* Main desktop navigation */
 
 #navbar {
@@ -274,25 +274,51 @@ footer {
 /* MOBILE NAVIGATION     */
 /* ===================== */
 .slicknav_menu {
+    display: none; /* Hidden by default, shows via media query */
     background: radial-gradient(circle, rgba(143,3,7,1) 0%, rgba(193,35,40,1) 50%, rgba(143,3,7,1) 100%) !important;
     padding: 10px;
-    display: none;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.slicknav_nav {
+    background: rgba(54, 6, 7, 0.9) !important;
+    width: 100%;
+    padding: 10px 0;
 }
 
 .slicknav_nav a {
     color: white !important;
     font-weight: bold;
-    float: right;
-    
-}
-
-.slicknav_btn{
-    background-color: rgb(54, 6, 7) !important;
+    padding: 10px 20px !important;
+    text-align: right;
+    transition: all 0.3s ease;
 }
 
 .slicknav_nav a:hover {
     color: rgb(253, 155, 155) !important;
+    background-color: rgba(54, 6, 7, 0.7) !important;
+}
+
+.slicknav_btn {
     background-color: rgb(54, 6, 7) !important;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+/* Ensure SlickNav appears only on mobile */
+@media (max-width: 767px) {
+    .slicknav_menu {
+        display: block;
+    }
+    header {
+        display: none;
+    }
+    #navbar {
+        display: none;
+    }
 }
 /* ===================== */
 /* CAROUSEL COMPONENT    */
