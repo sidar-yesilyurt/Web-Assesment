@@ -50,13 +50,14 @@ header h1 {
 }
 
 /* Main desktop navigation */
-.navbar {
+
+#navbar {
     display: block;
     background-color: #333;
     width: 100%;
 }
 
-.navbar ul {
+#navbar ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
@@ -65,11 +66,11 @@ header h1 {
     margin: 0;
 }
 
-.navbar ul li {
+#navbar ul li {
     position: relative;
 }
 
-.navbar ul li a {
+#navbar ul li a {
     color: white;
     padding: 15px 20px;
     display: block;
@@ -77,12 +78,12 @@ header h1 {
     transition: background-color 0.3s;
 }
 
-.navbar ul li a:hover {
+#navbar ul li a:hover {
     background-color: #444;
 }
 
 /* Dropdown menu styles */
-.nav_menu {
+#nav_menu {
     display: none;
     position: absolute;
     background-color: #333;
@@ -91,11 +92,11 @@ header h1 {
     z-index: 1;
 }
 
-.dropdown:hover .nav_menu {
+.dropdown:hover #nav_menu {
     display: block;
 }
 
-.dropdown .nav_menu {
+.dropdown #nav_menu {
     display: none;
     position: absolute;
     background-color: #333;
@@ -104,13 +105,14 @@ header h1 {
     z-index: 1;
 }
 
-.nav_menu li {
+#nav_menu li {
     width: 100%;
 }
 
-.nav_menu li a {
+#nav_menu li a {
     padding: 12px 16px;
 }
+
 
 /* ===================== */
 /* MAIN CONTENT LAYOUT   */
@@ -272,37 +274,26 @@ footer {
 /* MOBILE NAVIGATION     */
 /* ===================== */
 .slicknav_menu {
+    background: radial-gradient(circle, rgba(143,3,7,1) 0%, rgba(193,35,40,1) 50%, rgba(143,3,7,1) 100%) !important;
+    padding: 10px;
     display: none;
-    background: #333;
-    padding: 5px;
-}
-
-.slicknav_nav {
-    background: #444;
-    width: 100%;
 }
 
 .slicknav_nav a {
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
+    color: white !important;
+    font-weight: bold;
+    float: right;
+    
+}
+
+.slicknav_btn{
+    background-color: rgb(54, 6, 7) !important;
 }
 
 .slicknav_nav a:hover {
-    background: #555;
+    color: rgb(253, 155, 155) !important;
+    background-color: rgb(54, 6, 7) !important;
 }
-
-.slicknav_btn {
-    background: #1e9ae0;
-    margin: 5px;
-    padding: 8px 10px;
-    border-radius: 4px;
-}
-
-.slicknav_parent-link a {
-    padding: 10px 15px !important;
-}
-
 /* ===================== */
 /* CAROUSEL COMPONENT    */
 /* ===================== */
@@ -746,17 +737,22 @@ footer {
 }
 
 @media (max-width: 767px) {
-    .navbar {
+    header {
         display: none;
     }
-    
+
     .slicknav_menu {
         display: block;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        right: 0;
+        z-index: 999;
     }
 }
 
 @media (max-width: 479px) {
-    .navbar {
+    #navbar {
         display: none;
     }
     
