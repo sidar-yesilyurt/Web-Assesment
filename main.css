@@ -9,8 +9,13 @@
 
 body {
     font-family: Arial, sans-serif;
+<<<<<<< HEAD
     margin: 0 auto;
     padding: 0 10px;
+=======
+    margin: 0 auto; /* This centers the body */
+    padding: 0;
+>>>>>>> ce1b755 (slick bar)
     background-color: #f4f4f4;
     color: #333;
     display: flex;
@@ -118,12 +123,19 @@ header h1 {
 /* MAIN CONTENT LAYOUT   */
 /* ===================== */
 main {
+<<<<<<< HEAD
     flex: 1;
     padding: 20px 0;
     width: 100%;
     background: white;
 }
 
+=======
+    width: 100%; /* Full width of the container */
+    margin-left: 0;
+    margin-right: 0;
+}
+>>>>>>> ce1b755 (slick bar)
 .content {
     max-width: 100%;
     margin: 0 auto;
@@ -273,6 +285,7 @@ footer {
 /* ===================== */
 /* MOBILE NAVIGATION     */
 /* ===================== */
+<<<<<<< HEAD
 .slicknav_menu {
     display: none; /* Hidden by default, shows via media query */
     background: radial-gradient(circle, rgba(143,3,7,1) 0%, rgba(193,35,40,1) 50%, rgba(143,3,7,1) 100%) !important;
@@ -320,6 +333,31 @@ footer {
         display: none;
     }
 }
+=======
+/* SlickNav Mobile Menu Styles */
+.slicknav_menu {
+    display: none;
+    background: #333;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 95%;
+    z-index: 9999;
+}
+
+.slicknav_btn {
+    float: right;
+    margin: 5px !important;
+    background: #444 !important;
+}
+
+.slicknav_nav {
+    background: #444;
+    width: 95%;
+    padding: 10px 0;
+}
+
+>>>>>>> ce1b755 (slick bar)
 /* ===================== */
 /* CAROUSEL COMPONENT    */
 /* ===================== */
@@ -762,6 +800,7 @@ footer {
     }
 }
 
+<<<<<<< HEAD
 @media (max-width: 767px) {
     header {
         display: none;
@@ -777,6 +816,8 @@ footer {
     }
 }
 
+=======
+>>>>>>> ce1b755 (slick bar)
 @media (max-width: 479px) {
     #navbar {
         display: none;
@@ -810,4 +851,14 @@ footer {
     .rp-steps {
         flex-direction: column;
     }
+<<<<<<< HEAD
+=======
+}
+
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+    #navbar { display: none; }
+    .slicknav_menu { display: block; }
+        body { padding-top: 50px; }
+>>>>>>> ce1b755 (slick bar)
 }

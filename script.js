@@ -4,7 +4,11 @@ const products = [
         id: 1,
         name: "The Great Gatsby",
         price: 9.99,
+<<<<<<< HEAD
         image: "images/book1.JPG",
+=======
+        image: "images/book1.jpg",
+>>>>>>> ce1b755 (slick bar)
         author: "F. Scott Fitzgerald",
         review: "A timeless classic! The narration brought the Jazz Age to life.",
         stars: "★★★★★"
@@ -13,7 +17,11 @@ const products = [
         id: 2,
         name: "1984",
         price: 8.99,
+<<<<<<< HEAD
         image: "images/book2.JPG",
+=======
+        image: "images/book2.jpg",
+>>>>>>> ce1b755 (slick bar)
         author: "George Orwell",
         review: "Chilling and thought-provoking. Perfect narrator for this dystopia.",
         stars: "★★★★☆"
@@ -267,6 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
     createSeasonalSales();
 });
 
+<<<<<<< HEAD
 // Initialize SlickNav mobile menu
 $(function() {
     $('#menu').slicknav({
@@ -290,3 +299,26 @@ $(function() {
         }
     });
 });
+=======
+// Wait for everything to be fully loaded
+window.addEventListener('load', function() {
+    // Initialize SlickNav
+    if (typeof $.fn.slicknav === 'function') {
+        $('#menu').slicknav({
+            prependTo: 'body',
+            label: 'MENU',
+            brand: '',
+            closedSymbol: '☰',
+            allowParentLinks: true,
+            init: function() {
+                console.log('Mobile menu initialized successfully');
+            }
+        });
+    } else {
+        console.error('SlickNav plugin not loaded!');
+        setupMobileMenuFallback();
+    }
+});
+
+
+>>>>>>> ce1b755 (slick bar)
