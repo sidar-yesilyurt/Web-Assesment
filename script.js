@@ -4,11 +4,7 @@ const products = [
         id: 1,
         name: "The Great Gatsby",
         price: 9.99,
-<<<<<<< HEAD
-        image: "images/book1.JPG",
-=======
         image: "images/book1.jpg",
->>>>>>> ce1b755 (slick bar)
         author: "F. Scott Fitzgerald",
         review: "A timeless classic! The narration brought the Jazz Age to life.",
         stars: "★★★★★"
@@ -17,11 +13,7 @@ const products = [
         id: 2,
         name: "1984",
         price: 8.99,
-<<<<<<< HEAD
-        image: "images/book2.JPG",
-=======
         image: "images/book2.jpg",
->>>>>>> ce1b755 (slick bar)
         author: "George Orwell",
         review: "Chilling and thought-provoking. Perfect narrator for this dystopia.",
         stars: "★★★★☆"
@@ -275,31 +267,6 @@ document.addEventListener('DOMContentLoaded', () => {
     createSeasonalSales();
 });
 
-<<<<<<< HEAD
-// Initialize SlickNav mobile menu
-$(function() {
-    $('#menu').slicknav({
-        prependTo: 'body',
-        label: 'MENU',
-        allowParentLinks: true,
-        brand: 'Online Audiobooks',
-        duplicate: false,
-        closedSymbol: '&#9658;',
-        openedSymbol: '&#9660;'
-    });
-
-    // Smooth scroll for in-page links
-    $('a[href^="#"]').on('click', function(event) {
-        var target = $(this.getAttribute('href'));
-        if( target.length ) {
-            event.preventDefault();
-            $('html, body').stop().animate({
-                scrollTop: target.offset().top
-            }, 500);
-        }
-    });
-});
-=======
 // Wait for everything to be fully loaded
 window.addEventListener('load', function() {
     // Initialize SlickNav
@@ -319,6 +286,3 @@ window.addEventListener('load', function() {
         setupMobileMenuFallback();
     }
 });
-
-
->>>>>>> ce1b755 (slick bar)

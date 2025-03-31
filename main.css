@@ -1,4 +1,4 @@
-/* ===================== */
+* ===================== */
 /* BASE & GLOBAL STYLES  */
 /* ===================== */
 * {
@@ -9,13 +9,8 @@
 
 body {
     font-family: Arial, sans-serif;
-<<<<<<< HEAD
     margin: 0 auto;
     padding: 0 10px;
-=======
-    margin: 0 auto; /* This centers the body */
-    padding: 0;
->>>>>>> ce1b755 (slick bar)
     background-color: #f4f4f4;
     color: #333;
     display: flex;
@@ -123,19 +118,12 @@ header h1 {
 /* MAIN CONTENT LAYOUT   */
 /* ===================== */
 main {
-<<<<<<< HEAD
     flex: 1;
     padding: 20px 0;
     width: 100%;
     background: white;
 }
 
-=======
-    width: 100%; /* Full width of the container */
-    margin-left: 0;
-    margin-right: 0;
-}
->>>>>>> ce1b755 (slick bar)
 .content {
     max-width: 100%;
     margin: 0 auto;
@@ -285,55 +273,6 @@ footer {
 /* ===================== */
 /* MOBILE NAVIGATION     */
 /* ===================== */
-<<<<<<< HEAD
-.slicknav_menu {
-    display: none; /* Hidden by default, shows via media query */
-    background: radial-gradient(circle, rgba(143,3,7,1) 0%, rgba(193,35,40,1) 50%, rgba(143,3,7,1) 100%) !important;
-    padding: 10px;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-}
-
-.slicknav_nav {
-    background: rgba(54, 6, 7, 0.9) !important;
-    width: 100%;
-    padding: 10px 0;
-}
-
-.slicknav_nav a {
-    color: white !important;
-    font-weight: bold;
-    padding: 10px 20px !important;
-    text-align: right;
-    transition: all 0.3s ease;
-}
-
-.slicknav_nav a:hover {
-    color: rgb(253, 155, 155) !important;
-    background-color: rgba(54, 6, 7, 0.7) !important;
-}
-
-.slicknav_btn {
-    background-color: rgb(54, 6, 7) !important;
-    border-radius: 4px;
-    margin: 5px;
-}
-
-/* Ensure SlickNav appears only on mobile */
-@media (max-width: 767px) {
-    .slicknav_menu {
-        display: block;
-    }
-    header {
-        display: none;
-    }
-    #navbar {
-        display: none;
-    }
-}
-=======
 /* SlickNav Mobile Menu Styles */
 .slicknav_menu {
     display: none;
@@ -341,7 +280,7 @@ footer {
     padding: 10px;
     position: fixed;
     top: 0;
-    width: 95%;
+    width: 100%;
     z-index: 9999;
 }
 
@@ -353,11 +292,36 @@ footer {
 
 .slicknav_nav {
     background: #444;
-    width: 95%;
+    width: 100%;
     padding: 10px 0;
 }
 
->>>>>>> ce1b755 (slick bar)
+/* Fallback Mobile Menu Styles */
+.mobile-menu-fallback {
+    display: none;
+    background: #333;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.mobile-menu-fallback button {
+    float: right;
+    background: #444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#mobile-menu-content {
+    display: none;
+    background: #333;
+    padding: 10px;
+    margin-top: 10px;
+}
 /* ===================== */
 /* CAROUSEL COMPONENT    */
 /* ===================== */
@@ -800,24 +764,6 @@ footer {
     }
 }
 
-<<<<<<< HEAD
-@media (max-width: 767px) {
-    header {
-        display: none;
-    }
-
-    .slicknav_menu {
-        display: block;
-        width: 100%;
-        position: sticky;
-        top: 0;
-        right: 0;
-        z-index: 999;
-    }
-}
-
-=======
->>>>>>> ce1b755 (slick bar)
 @media (max-width: 479px) {
     #navbar {
         display: none;
@@ -851,14 +797,12 @@ footer {
     .rp-steps {
         flex-direction: column;
     }
-<<<<<<< HEAD
-=======
 }
 
 /* Mobile-specific styles */
 @media (max-width: 767px) {
     #navbar { display: none; }
     .slicknav_menu { display: block; }
-        body { padding-top: 50px; }
->>>>>>> ce1b755 (slick bar)
+    .mobile-menu-fallback { display: block; }
+    body { padding-top: 50px; }
 }
