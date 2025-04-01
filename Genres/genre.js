@@ -1,5 +1,5 @@
 //Imports the const from the storage.js
-import { fiction, nonFiction } from './storage.js';
+import { fiction, nonFiction, mystery } from './storage.js';
 
 const productGrid = document.getElementById("product-grid");
 
@@ -11,7 +11,10 @@ if (currentPage === "Fiction.html") {
     products = fiction;
 } else if (currentPage === "Non-Fiction.html") {
     products = nonFiction;
-}
+
+} else if (currentPage === "Mystery-Thriller.html") 
+    products = mystery;
+
 
 // Render the products
 products.forEach(product => {

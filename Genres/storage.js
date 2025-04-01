@@ -114,5 +114,70 @@ const nonFiction = [
     }
 ];
 
+const mystery = [
+    {
+        id: 13,
+        name: "The Night Circus",
+        price: 7.99,
+        image: "images/mystery1.jpg",
+        author: "John Green",
+        review: "A thrilling mystery story with perfect narration.",
+        stars: "★★★★★"
+    },
+    {
+        id: 14,
+        name: "The Da Vinci Code",
+        price: 9.99,
+        image: "images/mystery2.jpg",
+        author: "Daniel Radcliffe",
+        review: "A groundbreaking cryptographic masterpiece.",
+        stars: "★★★★★"
+    },
+
+    {
+        id: 15,
+        name: "The Silent Patient",
+        price: 6.99,
+        image: "images/mystery3.jpg",
+        author: "Jane Goodall",
+        review: "A heartwarming psychological thriller.",
+        stars: "★★★★★"
+    },
+    {
+        id: 16,
+        name: "The Help",
+        price: 8.99,
+        image: "images/mystery4.jpg",
+        author: "Kathryn Stockett",
+        review: "A powerful and thought-provoking mystery.",
+        stars: "★★★★★"
+    },
+    
+    {
+        id: 17,
+        name: "Gone Girl",
+        price: 10.99,
+        image: "images/mystery5.jpg",
+        author: "Gillian Flynn",
+        review: "A psychological thriller with twists at every turn.",
+        stars: "★★★★★"
+    },
+    {
+        id: 18,
+        name: "The Girl with the Dragon Tattoo",
+        price: 11.49,
+        image: "images/mystery6.jpg",
+        author: "Stieg Larsson",
+        review: "A gripping, dark mystery filled with suspense.",
+        stars: "★★★★★"
+    }
+
+
+]
+    
+
+
+
+
 // Export the data for use in other scripts
-export { fiction, nonFiction };
+export { fiction, nonFiction, mystery };

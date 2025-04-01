@@ -283,6 +283,5 @@ window.addEventListener('load', function() {
         });
     } else {
         console.error('SlickNav plugin not loaded!');
-        setupMobileMenuFallback();
     }
 });

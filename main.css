@@ -46,8 +46,7 @@ header {
 header h1 {
     margin: 0;
     font-size: 2rem;
-    /* Add any custom styling for "Online Audiobooks" */
-}
+ }
 /* Main desktop navigation */
 
 #navbar {
@@ -272,7 +271,6 @@ footer {
 /* ===================== */
 /* MOBILE NAVIGATION     */
 /* ===================== */
-/* SlickNav Mobile Menu Styles */
 
 .slicknav_menu {
     display: none;
@@ -294,33 +292,6 @@ footer {
     background: #444;
     width: 100%;
     padding: 10px 0;
-}
-
-/* Fallback Mobile Menu Styles */
-.mobile-menu-fallback {
-    display: none;
-    background: #333;
-    padding: 10px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 9999;
-}
-
-.mobile-menu-fallback button {
-    float: right;
-    background: #444;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-#mobile-menu-content {
-    display: none;
-    background: #333;
-    padding: 10px;
-    margin-top: 10px;
 }
 /* ===================== */
 /* CAROUSEL COMPONENT    */
