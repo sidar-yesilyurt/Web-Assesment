@@ -129,7 +129,7 @@ const mystery = [
         name: "The Da Vinci Code",
         price: 9.99,
         image: "images/mystery2.jpg",
-        author: "Daniel Radcliffe",
+        author: "Daniel Brown",
         review: "A groundbreaking cryptographic masterpiece.",
         stars: "★★★★★"
     },
