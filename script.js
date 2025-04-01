@@ -56,12 +56,13 @@ const products = [
     }
 ];
 
-// Select the product grid container to add product cards
+// Grab the container for our product grid
 const productGrid = document.getElementById("product-grid");
 
-// Only create product grid if we're on the homepage
+// Only add products if we're on the home page
+// Need this check so we don't try adding products on other pages
 if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
-    // Loop through each product and create its HTML card
+    // Loop through each product and create cards for them
     products.forEach(product => {
         const productElement = document.createElement("div");
         productElement.classList.add("product");
@@ -84,11 +85,12 @@ if (window.location.pathname.endsWith("index.html") || window.location.pathname 
                 </div>
             </div>
         `;
+        // Add the product card to our grid if it exists
         productGrid && productGrid.appendChild(productElement);
     });
 }
 
-// User reviews data for carousel
+// Data for our customer reviews carousel
 const reviews = [
     {
         name: "Emma W.",
@@ -107,20 +109,20 @@ const reviews = [
     }
 ];
 
-// Function to create the review carousel
+// This function builds our review carousel section
 function createReviewCarousel() {
-    // Only create carousel on homepage
+    // Only create the carousel on homepage
     if (!window.location.pathname.endsWith("index.html") && window.location.pathname !== "/") {
         return;
     }
 
     console.log("Creating Review Carousel");
 
-    // Create the carousel section
+    // Make the container for our carousel
     const carouselContainer = document.createElement('section');
     carouselContainer.classList.add('narrator-carousel');
     
-    // Add HTML for carousel layout with controls
+    // Build the HTML structure with all our reviews
     carouselContainer.innerHTML = `
         <h2>What Our Customers Say</h2>
         <div class="carousel-wrapper">
@@ -142,7 +144,7 @@ function createReviewCarousel() {
         </div>
     `;
 
-    // Place the carousel after the featured products section
+    // Put the carousel after the featured products section
     const featuredProductsSection = document.querySelector('.featured-products');
     if (!featuredProductsSection) {
         console.error("Featured Products Section not found!");
@@ -150,46 +152,47 @@ function createReviewCarousel() {
     }
     featuredProductsSection.insertAdjacentElement('afterend', carouselContainer);
 
-    // Select carousel items and buttons
+    // Get the items and buttons so we can make the carousel work
     const carouselItems = carouselContainer.querySelectorAll('.carousel-item');
     const prevBtn = carouselContainer.querySelector('.prev-btn');
     const nextBtn = carouselContainer.querySelector('.next-btn');
     let currentIndex = 0;
 
-    // Update carousel display to show the current item
+    // Show/hide reviews based on which one is active
     function updateCarousel() {
         carouselItems.forEach((item, index) => {
             item.style.display = index === currentIndex ? 'block' : 'none';
         });
     }
 
-    // Navigate to the next review
+    // Go to next review when clicked
     function nextSlide() {
         currentIndex = (currentIndex + 1) % carouselItems.length;
         updateCarousel();
     }
 
-    // Navigate to the previous review
+    // Go to previous review when clicked
     function prevSlide() {
         currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
         updateCarousel();
     }
 
-    // Add event listeners for carousel controls
+    // Make the buttons work
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', prevSlide);
 
-    // Show the first review initially
+    // Start by showing the first review
     updateCarousel();
 }
 
-// Seasonal Sales Data and Functionality
+// This adds sale items to the sales page
 function createSeasonalSales() {
     // Only create seasonal sales on sales page
     if (!window.location.pathname.includes('sales.html')) {
         return;
     }
 
+    // These are our discounted books for the sale
     const sale = [
         {
             id: 201,
@@ -229,12 +232,14 @@ function createSeasonalSales() {
         }
     ];
 
+    // Find the grid where we'll put our sale items
     const salesGrid = document.getElementById('seasonal-sales-grid');
     if (!salesGrid) {
         console.error('Sales grid not found!');
         return;
     }
 
+    // Add each sale book to the grid
     sale.forEach(book => {
         const bookElement = document.createElement('div');
         bookElement.classList.add('product');
@@ -261,15 +266,15 @@ function createSeasonalSales() {
     });
 }
 
-// Initialize all components when DOM is loaded
+// Run our functions when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     createReviewCarousel();
     createSeasonalSales();
 });
 
-// Wait for everything to be fully loaded
+// Make mobile menu work after everything is loaded
 window.addEventListener('load', function() {
-    // Initialize SlickNav
+    // Try to set up the mobile menu if SlickNav is available
     if (typeof $.fn.slicknav === 'function') {
         $('#menu').slicknav({
             prependTo: 'body',

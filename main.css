@@ -1,3 +1,4 @@
+/* ===================== */
 /* BASE & GLOBAL STYLES  */
 /* ===================== */
 * {
@@ -47,8 +48,8 @@ header h1 {
     margin: 0;
     font-size: 2rem;
  }
-/* Main desktop navigation */
 
+/* Main desktop navigation */
 #navbar {
     display: block;
     background-color: #333;
@@ -271,7 +272,6 @@ footer {
 /* ===================== */
 /* MOBILE NAVIGATION     */
 /* ===================== */
-
 .slicknav_menu {
     display: none;
     background: #333;
@@ -293,6 +293,7 @@ footer {
     width: 100%;
     padding: 10px 0;
 }
+
 /* ===================== */
 /* CAROUSEL COMPONENT    */
 /* ===================== */
@@ -490,7 +491,7 @@ footer {
     font-size: 1.1rem;
 }
 
-/* Steps in referral program */
+/* The Steps in referral program */
 .rp-steps {
     display: flex;
     justify-content: space-between;
@@ -748,12 +749,10 @@ footer {
         font-size: 85%;
     }
     
-    /* Adjust product grid for very small screens */
     .product-grid {
         grid-template-columns: 1fr;
     }
     
-    /* Adjust narrator profile layout */
     .narrator-profile {
         flex-direction: column;
         text-align: center;
@@ -764,7 +763,6 @@ footer {
         text-align: center;
     }
     
-    /* Adjust referral program steps */
     .rp-steps {
         flex-direction: column;
     }
