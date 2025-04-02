@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Audiobooks</title>
     
+    <!-- jQuery library load -->
     <script src="jquery-3.6.0.min.js"></script>
+    <!-- SlickNav CSS for mobile menu -->
     <link rel="stylesheet" href="slicknav.min.css">
+    <!-- SlickNav JS library -->
     <script src="jquery.slicknav.min.js"></script>
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <header>
+        <!-- Website title and logo section -->
         <a href="index.html" class="header-link"><h1>Welcome to Online Audiobooks</h1></a>
-        <img src="logo.jpg" alt="BookHaven Logo" style="width: 5cm; height: 5cm;">
+        <img src="logo.jpg" alt="Audiobook Logo" style="width: 5cm; height: 5cm;">
         <p>Download your favourite audiobooks!</p>
         
         <!-- Navigation Structure -->
@@ -22,6 +27,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li class="dropdown">
+                <!-- Made the href to # so it doesnt go anywehre -->
                 <a href="#" class="dropbtn">Genres</a>
                 <ul id="nav_menu">
                     <li><a href="/Genres/Fiction.html">Fiction</a></li>
@@ -31,27 +37,26 @@
             </li>
             <li><a href="sales.html">Events and Promotions</a></li>
             <li><a href="news.html">News</a></li>
-            
             </ul>
         </nav>
     </header>
   
   <main>
-
     <!-- Featured Products Section -->
     <section class="featured-products">
       <h2>Featured Products</h2>
+      <!-- Empty div to be populated by JavaScript -->
       <div class="product-grid" id="product-grid">
       </div>
     </section>
     
-    <!-- Review Carousel will be inserted here -->
   </main>
   
-
   <footer>
-    <p>&copy; 2025 Audiobook World. All rights reserved.</p>
+    <!-- FIXME: Footer copyright says "Audiobook World" but site is called "BookHaven" -->
+    <p>&copy; 2025 Online Audiobooks. All rights reserved.</p>
   </footer>
+  <!-- Script loaded at the end of body for better performance -->
   <script type="module" src="script.js"></script>
   </body>
 </html>

@@ -3,7 +3,7 @@ import { fiction, nonFiction, mystery } from './storage.js';
 
 const productGrid = document.getElementById("product-grid");
 
-// Improved page detection
+//Page detection
 const currentPage = window.location.pathname.split('/').pop();
 
 let products = [];
@@ -16,7 +16,7 @@ if (currentPage === "Fiction.html") {
     products = mystery;
 
 
-// Render the products
+// Render the products by creating div boxes
 products.forEach(product => {
     const productElement = document.createElement("div");
     productElement.classList.add("product");

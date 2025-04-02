@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Audiobooks</title>
     
+    <!-- jQuery library load -->
     <script src="jquery-3.6.0.min.js"></script>
+    <!-- SlickNav CSS for mobile menu -->
     <link rel="stylesheet" href="slicknav.min.css">
+    <!-- SlickNav JS library -->
     <script src="jquery.slicknav.min.js"></script>
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="../main.css">
-    <script type="module" src="genre.js"></script>
-    <script src="../script.js"></script>
 </head>
 <body>
     <header>
@@ -24,6 +26,7 @@
             <li><a href="../index.html">Home</a></li>
             <li><a href="../about.html">About</a></li>
             <li class="dropdown">
+            <!-- Made the href to # so it doesnt go anywehre -->
                 <a href="#" class="dropbtn">Genres</a>
                 <ul id="nav_menu">
                     <li><a href="Fiction.html">Fiction</a></li>
@@ -52,7 +55,9 @@
   <footer>
     <p>&copy; 2025 BookHaven. All rights reserved.</p>
   </footer>
-
+  <!-- At the end for better performance -->
+   <script type="module" src="genre.js"></script>
+  <script type="module" src="../script.js"></script>
   
 </body>
 </html>

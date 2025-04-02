@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Audiobooks</title>
     
+    <!-- jQuery library load -->
     <script src="jquery-3.6.0.min.js"></script>
+    <!-- SlickNav CSS for mobile menu -->
     <link rel="stylesheet" href="slicknav.min.css">
+    <!-- SlickNav JS library -->
     <script src="jquery.slicknav.min.js"></script>
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="main.css">
-    <script type="module" src="script.js"></script>
 </head>
 <body>
   <header>
     <a href="index.html" class="header-link"><h1>Welcome to Online Audiobooks</h1></a>
-    <img src="logo.jpg" alt="BookHaven Logo" style="width: 5cm; height: 5cm;">
+    <img src="logo.jpg" alt="Audiobooks Logo" style="width: 5cm; height: 5cm;">
     <p>Download your favourite audiobooks!</p>
     
     <!-- Navigation Structure -->
@@ -23,6 +26,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li class="dropdown">
+            <!-- Made the href to # so it doesnt go anywehre -->
             <a href="#" class="dropbtn">Genres</a>
             <ul id="nav_menu">
                 <li><a href="/Genres/Fiction.html">Fiction</a></li>
@@ -32,39 +36,43 @@
         </li>
         <li><a href="sales.html">Events and Promotions</a></li>
         <li><a href="news.html">News</a></li>
-        
         </ul>
     </nav>
 </header>
-
   
   <main>
+    <!-- News Items Section -->
     <div class="news">
         <h2>Latest News</h2>
+        <!-- News item 1 -->
         <div class="news-item">
             <span class="news-date">March 15, 2025</span>
-            <h3>BookHaven Releases New Audiobook on Children's Fiction</h3>
+            <h3>Online Audiobooks Releases New Audiobook on Children's Fiction</h3>
             <p>Discover a new children's book by author Jane Doe, featuring engaging characters and captivating storytelling. Perfect for young listeners aged 6-12.</p>
             <a href="#" class="read-more">Read More</a>
         </div>
+        <!-- News item 2 -->
         <div class="news-item">
             <span class="news-date">March 20, 2025</span>
-            <h3>BookHaven Announces New Releases on Mystery & Thriller</h3>
+            <h3>Online Audiobooks Announces New Releases on Mystery & Thriller</h3>
             <p>Discover new mystery & thriller books by authors Tom Smith and Jane Doe, featuring suspenseful and intriguing plotlines that will keep you on the edge of your seat.</p>
             <a href="#" class="read-more">Read More</a>
         </div>
+        <!-- News item 3 -->
         <div class="news-item">
             <span class="news-date">March 24, 2025</span>
-            <h3>BookHaven Releases New Audiobook on Fiction</h3>
+            <h3>Online Audiobooks Releases New Audiobook on Fiction</h3>
             <p>Discover a new classic novel by author John Doe, featuring thought-provoking themes and engaging characters that will stay with you long after you finish listening.</p>
             <a href="#" class="read-more">Read More</a>
         </div> 
     </div>
 </main>
   
-
   <footer>
-    <p>&copy; 2025 Audiobook World. All rights reserved.</p>
+    <p>&copy; 2025 Online Audiobooks. All rights reserved.</p>
   </footer>
+  
+  <!-- At the end for better performance -->
+  <script type="module" src="script.js"></script>
 </body>
 </html>

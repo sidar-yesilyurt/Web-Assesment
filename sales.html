@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Audiobooks</title>
     
+    <!-- jQuery library load -->
     <script src="jquery-3.6.0.min.js"></script>
+    <!-- SlickNav CSS for mobile menu -->
     <link rel="stylesheet" href="slicknav.min.css">
+    <!-- SlickNav JS library -->
     <script src="jquery.slicknav.min.js"></script>
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="main.css">
-    <script type="module" src="script.js"></script>
-</head>
-<body>
+
 </head>
 <body>
   <header>
     <a href="index.html" class="header-link"><h1>Welcome to Online Audiobooks</h1></a>
-    <img src="logo.jpg" alt="BookHaven Logo" style="width: 5cm; height: 5cm;">
+    <img src="logo.jpg" alt="Audiobooks Logo" style="width: 5cm; height: 5cm;">
     <p>Download your favourite audiobooks!</p>
     
     <!-- Navigation Structure -->
@@ -25,6 +27,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li class="dropdown">
+            <!-- Href is # so it doesnt go anywhere when clicked -->
             <a href="#" class="dropbtn">Genres</a>
             <ul id="nav_menu">
                 <li><a href="/Genres/Fiction.html">Fiction</a></li>
@@ -34,100 +37,97 @@
         </li>
         <li><a href="sales.html">Events and Promotions</a></li>
         <li><a href="news.html">News</a></li>
-        
         </ul>
     </nav>
 </header>
-
-
-  
   
   <main>
     <!-- Seasonal Sales Section -->
     <section class="seasonal-sales">
-      <h2>Seasonal Sales</h2>
-      <div class="product-grid" id="seasonal-sales-grid"></div>
+      <h2>Seasonal Sales</h2>      <div class="product-grid" id="seasonal-sales-grid"></div>
     </section>
     
-<!-- Referral Program Section -->
-<section class="referral-program">
-    <!-- Main container for everything -->
-    <div class="rp-container">
-      <h2 class="rp-title"><i class="fas fa-gift"></i> Share the Love, Earn Rewards</h2>
-      <!-- Subtitle text -->
-      <p class="rp-subtitle">Invite friends and both of you get exclusive benefits!</p>
-      
-      <!-- The 3 steps section -->
-      <div class="rp-steps">
-        <!-- Step 1 -->
-        <div class="rp-step">
-          <div class="rp-step-number">1</div> <!-- Number circle -->
-          <h3>Share Your Link</h3> <!-- Step title -->
-          <p>Copy and send your unique code</p> <!-- Step description -->
+    <!-- Referral Program Section -->
+    <section class="referral-program">
+      <!-- Main container for everything -->
+      <div class="rp-container">
+        <h2 class="rp-title">
+           Share the Love, Earn Rewards
+        </h2>
+        <!-- Subtitle text -->
+        <p class="rp-subtitle">Invite friends and both of you get exclusive benefits!</p>
+        
+        <!-- The 3 steps section -->
+        <div class="rp-steps">
+          <!-- Step 1 -->
+          <div class="rp-step">
+            <div class="rp-step-number">1</div> <!-- Number circle -->
+            <h3>Share Your Link</h3> <!-- Step title -->
+            <p>Copy and send your unique code</p> <!-- Step description -->
+          </div>
+          
+          <!-- Step 2 -->
+          <div class="rp-step">
+            <div class="rp-step-number">2</div>
+            <h3>Friends Join</h3>
+            <p>They sign up using your link</p>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="rp-step">
+            <div class="rp-step-number">3</div>
+            <h3>Both Earn</h3>
+            <p>You get credits, they get discount</p>
+          </div>
         </div>
         
-        <!-- Step 2 -->
-        <div class="rp-step">
-          <div class="rp-step-number">2</div>
-          <h3>Friends Join</h3>
-          <p>They sign up using your link</p>
+        <!-- Box for the referral link -->
+        <div class="rp-box">
+          <h3>Your Unique Referral Link:</h3> <!-- Box title -->
+          <!-- Input group with copy button -->
+          <div class="rp-input-group">
+            <input type="text" id="rpInput" value="https://onlineaudiobooks.com/ref=user123" readonly>
+            <button id="rpCopyBtn">Copy</button> <!-- Simple copy button -->
+          </div>
+          <!-- Social sharing options -->
+          <div class="rp-social">
+            <span>Share via:</span> <!-- Label -->
+            <a href="#"><h3>Facebook</h3></a> <!-- Facebook option -->
+            <a href="#"><h3>Insta</h3></a> <!-- Instagram option -->
+            <a href="#"><h3>X</h3></a> <!-- X option -->
+            <a href="#"><h3>Email</h3></a> <!-- Email option -->
+          </div>
         </div>
         
-        <!-- Step 3 -->
-        <div class="rp-step">
-          <div class="rp-step-number">3</div>
-          <h3>Both Earn</h3>
-          <p>You get credits, they get discount</p>
-        </div>
-      </div>
-      
-      <!-- Box for the referral link -->
-      <div class="rp-box">
-        <h3>Your Unique Referral Link:</h3> <!-- Box title -->
-        <!-- Input group with copy button -->
-        <div class="rp-input-group">
-          <input type="text" id="rpInput" value="https://bookhaven.com/ref=user123" readonly>
-          <button id="rpCopyBtn">Copy</button> <!-- Simple copy button -->
-        </div>
-        <!-- Social sharing options -->
-        <div class="rp-social">
-          <span>Share via:</span> <!-- Label -->
-          <a href="#"><h3>Facebook</h3></a> <!-- Facebook option -->
-          <a href="#"><h3>Insta</h3></a> <!-- Instagram option -->
-          <a href="#"><h3>X</h3></a> <!-- X option -->
-          <a href="#"><i class="fas fa-envelope"></i></a> <!-- Email option -->
-        </div>
-      </div>
-      
-      <!-- Rewards section -->
-      <div class="rp-rewards">
-        <h3>Your Reward Tiers:</h3> <!-- Rewards title -->
-        <!-- Container for reward tiers -->
-        <div class="rp-tiers">
-          <!-- Tier 1 -->
-          <div class="rp-tier">
-            <h4>3 Friends</h4> <!-- Tier requirement -->
-            <p>1 Free Audiobook</p> <!-- Tier reward -->
-          </div>
-          <!-- Tier 2 -->
-          <div class="rp-tier">
-            <h4>5 Friends</h4>
-            <p>VIP Status</p>
-          </div>
-          <!-- Tier 3 -->
-          <div class="rp-tier">
-            <h4>10+ Friends</h4>
-            <p>Monthly Freebies</p>
+        <!-- Rewards section -->
+        <div class="rp-rewards">
+          <h3>Your Reward Tiers:</h3> <!-- Rewards title -->
+          <!-- Container for reward tiers -->
+          <div class="rp-tiers">
+            <!-- Tier 1 -->
+            <div class="rp-tier">
+              <h4>3 Friends</h4> <!-- Tier requirement -->
+              <p>1 Free Audiobook</p> <!-- Tier reward -->
+            </div>
+            <!-- Tier 2 -->
+            <div class="rp-tier">
+              <h4>5 Friends</h4>
+              <p>VIP Status</p>
+            </div>
+            <!-- Tier 3 -->
+            <div class="rp-tier">
+              <h4>10+ Friends</h4>
+              <p>Monthly Freebies</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-</main>
-
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Audiobook World. All rights reserved.</p>
+    <p>&copy; 2025 Online Audiobooks. All rights reserved.</p>
   </footer>
-</body>
+    <!-- Script at the end of body for better performance -->
+    <script type="module" src="script.js"></script></body>
 </html>

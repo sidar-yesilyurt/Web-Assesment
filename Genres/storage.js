@@ -1,4 +1,4 @@
-//Storage the Fictional and Non-Fictional Products and Mystery
+//Storage the Fictional and Non-Fictional Products and Mystery Genres
 
 const fiction = [
     {
