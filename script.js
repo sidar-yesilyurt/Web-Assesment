@@ -85,7 +85,7 @@ if (window.location.pathname.endsWith("index.html") || window.location.pathname 
                 </div>
             </div>
         `;
-        // Add the product card to our grid if it exists
+        // Add the product card to our grid
         productGrid && productGrid.appendChild(productElement);
     });
 }

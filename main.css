@@ -39,7 +39,7 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
     width: 100%;
 }
@@ -128,6 +128,7 @@ main {
     margin: 0 auto;
     padding: 0 15px;
 }
+
 
 /* ===================== */
 /* PRODUCT GRID SYSTEM   */
@@ -698,7 +699,7 @@ footer {
 /* News date styling */
 .news-date {
     display: block;
-    color: #7f8c8d;
+    color: #333;
     font-size: 0.9rem;
     margin-bottom: 8px;
     font-style: italic;
@@ -708,23 +709,78 @@ footer {
 /* MOBILE NAVIGATION - SLICKNAV */
 /* ===================== */
 .slicknav_menu {
-    display: none;
+    display: none; /* Hidden by default */
     background: #333;
-    padding: 10px;
-    position: fixed;
-    top: 0;
-    width: 95%;
-    max-width: 1024px;
+    width: 100%;
+    padding: 0 2.5%; /* Matches your fluid layout */
     box-sizing: border-box;
-    z-index: 9999;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0 auto;
+}
+
+.slicknav_btn {
+    background: #333; 
+    margin: 10px 0; 
+    padding: 10px 15px; /* Better touch target */
+    color: white;
+    border-radius: 4px;/* Rounded Corners */
+    float: left; 
+}
+
+.slicknav_nav {
+    display: none; /* Hidden until activated */
+    background: #444; 
+    width: 100%;
+    clear: both; 
+}
+
+.slicknav_nav ul {
+    list-style: none; /*removes bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.slicknav_nav li {
+    width: 100%;
+    padding: 0;
+}
+
+.slicknav_nav a {
+    color: white;
+    padding: 12px 15px;
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid #333; /* Visual separation */
 }
 
 /* ===================== */
 /* MEDIA QUERIES */
 /* ===================== */
+
+@media (max-width: 767px) {
+    #navbar { 
+        display: none; /* Hide desktop nav */
+    }
+    
+    .slicknav_menu {
+        display: block; /* Show mobile menu */
+    }
+    
+    .slicknav_nav {
+        display: block; /* Show menu items */
+    }
+    
+    body { 
+        padding-top: 50px; /* Space for fixed menu */
+    }
+}
+
+@media (max-width: 479px) {
+    .slicknav_btn {
+        padding: 8px 15px;
+        font-size: 18px;
+    }
+}
+
+
 @media (max-width: 1024px) {
     /* Large tablets/small laptops */
     body {
@@ -751,13 +807,6 @@ footer {
 }
 
 @media (max-width: 767px) {
-    /* Mobile menu activation */
-    #navbar { 
-        display: none; 
-    }
-    .slicknav_menu {
-        display: block;
-    }
     body { 
         padding-top: 50px; 
     }

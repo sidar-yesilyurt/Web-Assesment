@@ -1,0 +1,43 @@
+
+h1 {
+    color: white;
+}
+
+label {
+    display: inline-block;
+    width: 11em;
+    text-align: right;
+    vertical-align: top;
+}
+input, select, textarea {
+    margin-left: 1em;
+    margin-right: 0.5em;
+}
+select { 
+    width: 13em; 
+}
+textarea {
+    height: 5em;
+    width: 20em;
+}
+span {
+    color: red;
+    vertical-align: top;
+}
+.messages {
+    border: 3px solid red;
+    color: red;
+    padding: 2em;
+    margin-bottom: 2em;
+}
+main{
+    text-align: center;
+    flex: 1; /* Makes main content take up remaining space */
+    
+}
+
+main h1{
+    color: black;
+}
+
+
